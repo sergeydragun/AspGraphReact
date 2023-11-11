@@ -1,3 +1,5 @@
+using AspGraphReact.API;
+
 namespace AspGraphReact
 {
     public class Program
@@ -9,13 +11,11 @@ namespace AspGraphReact
             builder.Services
                     .AddGraphQLServer()
                     .AddInMemorySubscriptions()
-                    .AddQueryType<VedaVersumBaseQuery>()
-                    .AddMutationType<VedaVersumMutation>()
-                    .AddSubscriptionType<VedaVersumSubscription>();
+                    .AddQueryType<InfoQuery>()
+                    .AddMutationType<InfoMutation>()
+                    .AddSubscriptionType<InfoSubcription>();
 
             var app = builder.Build();
-
-            app.MapGet("/", () => "Hello World!");
 
             app.Run();
         }
