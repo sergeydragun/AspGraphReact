@@ -29,6 +29,13 @@ namespace AspGraphReact
 
             var app = builder.Build();
 
+            app.UseWebSockets()
+               .UseRouting()
+               .UseEndpoints(endpoints =>
+               {
+                   endpoints.MapGraphQL();
+               });
+
             app.Run();
         }
     }
