@@ -1,5 +1,4 @@
-﻿using DAL.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
-    public interface IInfoCardRepository : IBaseRepository<InfoCard>
+    public interface IUnitOfWork : IDisposable
     {
+        IInfoCardRepository InfoCards { get; }
+        Task<int> SaveAsync();
     }
 }

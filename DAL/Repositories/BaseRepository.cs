@@ -1,4 +1,5 @@
 ﻿using DAL.EF;
+using DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
-    public abstract class BaseRepository<T> where T : class
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected MyDbContext _db;
 
@@ -40,6 +41,7 @@ namespace DAL.Repositories
         {
             return _db.Set<T>().AsNoTracking();
         }
+
         public void Delete(T entity)
         {
             _db.Set<T>().Remove(entity);
