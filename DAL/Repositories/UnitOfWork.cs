@@ -27,6 +27,16 @@ namespace DAL.Repositories
             }
         }
 
+        private UserRepository _userRepository;
+        public IUserRepository Users
+        {
+            get
+            {
+                _userRepository ??= new UserRepository(_db);
+                return _userRepository;
+            }
+        }
+
         public void Dispose()
         {
             Dispose(true);
