@@ -6,7 +6,7 @@ namespace Common
     public static class Constants
     {
         public static string ConfigurationName => "aspgraph";
-        public static DBVersion DBVersion => new() { Major = 1, Minor = 1, Build = 1 };
+        public static DBVersion DBVersion => new() { Major = 8, Minor = 0, Build = 34 };
     }
 
     public class DBVersion

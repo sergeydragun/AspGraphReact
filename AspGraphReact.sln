@@ -9,6 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspGraphReact", "AspGraphRe
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{8D898528-3DC6-4F35-B1BE-A3E206604ABF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{67EE10DA-F3CD-4C85-8D21-17BE3F3E2B64} = {67EE10DA-F3CD-4C85-8D21-17BE3F3E2B64}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{D55BD363-9DC7-4E9E-80CB-475CEA3B763B}"
 	ProjectSection(ProjectDependencies) = postProject

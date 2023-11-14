@@ -13,6 +13,7 @@ namespace DAL.EF
     {
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) 
         {
+            Database.EnsureCreated();
         }
 
         public DbSet<User> Users { get; set; }

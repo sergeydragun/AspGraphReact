@@ -20,6 +20,9 @@ namespace AspGraphReact
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));
 
+            var path = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "config.json");
+            builder.Configuration.AddJsonFile(path, optional: false, reloadOnChange: true);
+
             var connectionString = builder.Configuration.GetConnectionString(Constants.ConfigurationName);
 
             builder.Services.ConfigureDbContext(connectionString);
